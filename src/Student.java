@@ -33,4 +33,20 @@ public class Student {
     public String getSection() {
         return section;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setStream(String stream) {
+        this.stream = stream;
+    }
+
+    public void setSection(String section) {
+        this.section = section;
+    }
 }
