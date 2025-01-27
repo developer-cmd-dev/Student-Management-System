@@ -17,7 +17,15 @@ public class ManagementSystem {
 
     public void showStudentList() {
         for (Student students : studentList) {
-            System.out.println("Name: " + students.getName() + " RollNO :" + students.getRollNo() + " Age: " + students.getAge() + " " + "Stream:" + students.getStream() + " Section: " + students.getSection());
+
+            System.out.println("Name: "+students.getName());
+            System.out.println("Roll no: "+students.getRollNo());
+            System.out.println("Stream: "+students.getStream());
+            System.out.println("Section: "+students.getSection());
+            System.out.println("Age: "+students.getAge());
+
+            System.out.println("--------------------------------------------");
+            System.out.println();
         }
     }
 
@@ -57,6 +65,27 @@ public class ManagementSystem {
 
             } else if (choice == 2) {
                 showStudentList();
+            }else if(choice ==3){
+                System.out.println("Enter Student Roll No.");
+                int rollNo = sc.nextInt();
+                sc.nextLine();
+                Student getStudent = null;
+                for(Student students:studentList){
+                    if(students.getRollNo() == rollNo){
+                        getStudent = students;
+                        break;
+                    }
+                }
+                if(getStudent!=null){
+
+                    System.out.println("Name: "+getStudent.getName());
+                    System.out.println("Roll no: "+getStudent.getRollNo());
+                    System.out.println("Stream: "+getStudent.getStream());
+                    System.out.println("Section: "+getStudent.getSection());
+                    System.out.println("Age: "+getStudent.getAge());
+                }else{
+                    System.out.println("Student data not found! or Enter correct roll no.");
+                }
             } else if (choice == 6) {
                 break;
             }
